@@ -23,11 +23,7 @@
             <a href="#info" class="side-link">Info</a>
             <a href="#how-to" class="side-link">How To</a>
             <a href="#download-bundle" class="side-link">Download All</a>
-            <a href="#rifles" class="side-link">Rifles</a>
-            <a href="#snipers" class="side-link">Snipers</a>
-            <a href="#pistols" class="side-link">Pistols</a>
-            <a href="#smgs" class="side-link">SMGs</a>
-            <a href="#heavy" class="side-link">Heavy</a>
+            <a href="#models" class="side-link">Weapons</a>
         </aside>
 
         <!-- Main Content -->
@@ -37,6 +33,11 @@
             <section id="info" class="page_info_container">
                 <div class="container-text">
                     <h1>Pre-Sliced Counter-Strike Weapon Models!</h1>
+                    <h2>
+                        Free, pre-separated CS2 weapon models 
+                        ready for texture painting in Blender & 3D software.
+                    </h2>
+
                     <p class="lead-text">
                         My first CS2 skin took 5 days—2 of which were wasted fighting Valve's welded meshes 
                         and hunting down overlapping triangles. I originally built this library just for myself, 
@@ -63,17 +64,39 @@
                 </div>
             </section>
 
-            <!-- Video Demonstration 2 -->
-            <div class="video-wrapper">
-                <video autoplay muted loop playsinline>
-                    <source src="assets/videos/AK47_exsplode_animation0001-0120.mkv" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+            <!-- Interactive Video Slider Demonstration -->
+            <div class="interactive-video-container">
+                <div class="video-wrapper">
+                    <video id="ak-scrub-video" muted preload="auto" playsinline>
+                        <!-- Tip: Ensure this file is .mp4 (H.264) for smooth frame scrubbing -->
+                        <source src="assets/videos/USP-S_Exspode_preview.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <!-- The Scrub Slider & Labels -->
+                <div class="video-slider-box">
+                    <div class="slider-labels">
+                        <span>0.0 — Exploded</span>
+                        <span id="slider-percentage-display">Exploded: 0%</span>
+                        <span>1.0 — Assembled</span>
+                    </div>
+                    <input 
+                        type="range" 
+                        id="video-scrubber" 
+                        min="0" 
+                        max="1" 
+                        step="0.005" 
+                        value="0"
+                    >
+                </div>
             </div>
 
             <section class="page_info_container">
                 <div class="container-text">
                     <p class="lead-text">These models use the original 1:1 UV maps and scale — the only difference is that I’ve taken them apart for you.</p>
+                    <p>
+                        For example, the Desert Eagle shown here—a sliced model—took about 30 minutes including rendering the image. That might not sound like much, but it's a huge difference from 3 hours
                 </div>
             </section>
 
@@ -81,41 +104,9 @@
             <div class="refrence-image-size">
                 <img src="assets/images/Eagel_image.png" class="refrence-image" alt="AK-47 Parts Breakdown">
             </div>
-            <div class="refrence-image-size">
-                <img src="assets/images/AK47_Showcase_03.png" class="refrence-image" alt="AK-47 Parts Breakdown">
-            </div>
-
-
-            <section class="page_info_container">
-                <div class="container-text">
-                    <h2>The AK-47 is broken down into nine main sections:</h2>
-                    <ul class="parts-list">
-                        <li><span>A</span> — Top Handguard</li>
-                        <li><span>B</span> — Bottom Handguard</li>
-                        <li><span>C</span> — Top Cover</li>
-                        <li><span>D</span> — Barrel</li>
-                        <li><span>E</span> — Upper Barrel</li>
-                        <li><span>F</span> — Lower Dust Cover</li>
-                        <li><span>G</span> — Upper Dust Cover</li>
-                        <li><span>H</span> — Magazine</li>
-                        <li><span>I</span> — Internal Parts</li>
-                    </ul>
-                    <p class="note-text">Part counts vary from weapon to weapon. The AK47 has 15 total parts in the full collection.</p>
-                </div>
-            </section>
-
-            <!-- Showcase Grid -->
-            <div class="two_layout_section">
-                <div class="two-grid-image">
-                    <img src="assets/images/AK47_Showcase_Parts_01.png" class="refrence-image" alt="AK47 Part Details 1">
-                </div>
-                <div class="two-grid-image">
-                    <img src="assets/images/AK47_Showcase_Parts_02.png" class="refrence-image" alt="AK47 Part Details 2">
-                </div>
-            </div>
 
             <!-- How To Section -->
-            <section id="how-to" class="page_info_container">
+            <section id="download-bundle" class="page_info_container">
                 <div class="container-text">
                     <h1>Quick-Start Guide</h1>
                     <ol class="steps-list">
@@ -124,14 +115,14 @@
                         <li>Import or drag into Blender</li>
                         <li>Start painting</li>
                     </ol>
-                    <p> It's best to drag the files into a blender project.</p>
+                    <p> When using Blender; It's best to drag the files into a blender project. And if using the .blend files select append and select all items in the object file</p>
                     <P> .BLEND files already have pre-assigned materials for instant drag-and-paint.</P>
-                    <p> FBX files include raw geometry without preset materials for use outside of Blender.</p>
+                    <p> .FBX files include raw geometry without preset materials for use outside of Blender.</p>
                 </div>
             </section>
 
             <!-- .blend Master Download -->
-            <section id="download-bundle" class="page_info_container">
+            <section class="page_info_container">
                 <a href="downloads/cs2_blender_models.zip" class="download-link" target="_blank" rel="noopener noreferrer">
                     <div class="download-animation">
                         <h2>DOWNLOAD .BLEND COLLECTION (.ZIP)</h2>
@@ -140,7 +131,7 @@
                 </a>
 
             <!-- .FBX Master Download -->
-            <section id="download-bundle" class="page_info_container">
+            <section class="page_info_container">
                 <a href="downloads/cs2_fbx_models.zip" class="download-link" target="_blank" rel="noopener noreferrer">
                     <div class="download-animation">
                         <h2>DOWNLOAD .FBX COLLECTION (.ZIP)</h2>
@@ -148,16 +139,36 @@
                     </div>
                 </a>
 
-                <section class="progress-section">
+                <section id="models" class="progress-section">
                     <h2 class="glow-text">5/34 Completed</h2>
                     <div class="progress-bar-container">
                         <div class="progress-bar-fill"></div>
-                    </div>
+                    </div>models
                 </section>
+                
+                <!-- ================= FILTER CONTROLS ================= -->
+                <div class="filter-controls-container">
+                    <!-- Category Tabs -->
+                    <div class="filter-group category-filters">
+                        <button class="filter-btn active" data-category="all">All</button>
+                        <button class="filter-btn" data-category="weapons">Rifles</button>
+                        <button class="filter-btn" data-category="snipers">Snipers</button>
+                        <button class="filter-btn" data-category="pistols">Pistols</button>
+                        <button class="filter-btn" data-category="smgs">SMGs</button>
+                        <button class="filter-btn" data-category="heavy">Heavy</button>
+                    </div>
+
+                    <!-- Status Filters (Show All / Finished / In Progress) -->
+                    <div class="filter-group status-filters">
+                        <button class="filter-btn active" data-status="all">Show All</button>
+                        <button class="filter-btn status-ready" data-status="finished">Finished</button>
+                        <button class="filter-btn status-wip" data-status="wip">In Progress</button>
+                    </div>
+                </div>
 
             <!-- ================= RIFLES (7) ================= -->
-            <div id="rifles" class="section-text">
-                <h2>&lt; --- Rifles (7) --- &gt;</h2>
+            <div id="weapons" class="section-text">
+                <h2> Rifles (7) </h2>
             </div>
             <div class="weapon-grid">
                 
@@ -231,7 +242,7 @@
 
             <!-- ================= SNIPERS (4) ================= -->
             <div id="snipers" class="section-text">
-                <h2>&lt; --- Snipers (4) --- &gt;</h2>
+                <h2> Snipers (4) </h2>
             </div>
             <div class="weapon-grid">
                 <a href="downloads/single/AWP.zip" class="weapon-box finished" download>
@@ -263,7 +274,7 @@
 
             <!-- ================= PISTOLS (10) ================= -->
             <div id="pistols" class="section-text">
-                <h2>&lt; --- Pistols (10) --- &gt;</h2>
+                <h2> Pistols (10) </h2>
             </div>
             <div class="weapon-grid">
                 <div class="weapon-box work-in-progress">
@@ -329,13 +340,14 @@
                     </div>
                     <h3 class="weapon-name">USP-S</h3>
                     <p class="weapon-status">15 parts • Sliced & Grouped</p>
+                    <p class="weapon-status">Note: This was mistakenly labeled as USP-6 in the 3D files. Still works 100% the same!</p>
                     <span class="card-download-btn">Download Standalone .ZIP</span>
                 </a>
             </div>
 
             <!-- ================= SMGs (7) ================= -->
             <div id="smgs" class="section-text">
-                <h2>&lt; --- SMGs (7) --- &gt;</h2>
+                <h2> SMGs (7)</h2>
             </div>
             <div class="weapon-grid">
                 <div class="weapon-box work-in-progress"><div class="weapon-image"><img src="assets/gun_default/MAC10_Default.png" class="img-main" alt="MAC-10" loading="lazy"><span class="badge wip">In Progress</span></div><h3 class="weapon-name">MAC-10</h3><p class="weapon-status">Coming Soon</p></div>
@@ -349,7 +361,7 @@
 
             <!-- ================= HEAVY (6) ================= -->
             <div id="heavy" class="section-text">
-                <h2>&lt; --- Heavy (6) --- &gt;</h2>
+                <h2> Heavy (6) </h2>
             </div>
             <div class="weapon-grid">
                 <div class="weapon-box work-in-progress"><div class="weapon-image"><img src="assets/gun_default/MAG7_Default.png" class="img-main" alt="MAG-7" loading="lazy"><span class="badge wip">In Progress</span></div><h3 class="weapon-name">MAG-7</h3><p class="weapon-status">Coming Soon</p></div>
@@ -371,5 +383,114 @@
         </nav>
     </footer>
 
-</body>
+        <script>
+        let activeCategory = 'all';
+        let activeStatus = 'all';
+
+        const categoryBtns = document.querySelectorAll('.category-filters .filter-btn');
+        const statusBtns = document.querySelectorAll('.status-filters .filter-btn');
+
+        // Pair category IDs with their corresponding grid containers
+        const categoryMap = {
+            weapons: { header: document.getElementById('weapons'), grid: document.getElementById('weapons')?.nextElementSibling },
+            snipers: { header: document.getElementById('snipers'), grid: document.getElementById('snipers')?.nextElementSibling },
+            pistols: { header: document.getElementById('pistols'), grid: document.getElementById('pistols')?.nextElementSibling },
+            smgs: { header: document.getElementById('smgs'), grid: document.getElementById('smgs')?.nextElementSibling },
+            heavy: { header: document.getElementById('heavy'), grid: document.getElementById('heavy')?.nextElementSibling }
+        };
+
+        function applyFilters() {
+            Object.entries(categoryMap).forEach(([catKey, { header, grid }]) => {
+            if (!grid) return;
+
+            const isCatMatch = (activeCategory === 'all' || activeCategory === catKey);
+            let visibleInThisCat = 0;
+
+            const cards = grid.querySelectorAll('.weapon-box');
+            cards.forEach(card => {
+                const isFinished = card.classList.contains('finished');
+                let isStatusMatch = true;
+
+                if (activeStatus === 'finished') isStatusMatch = isFinished;
+                if (activeStatus === 'wip') isStatusMatch = !isFinished;
+
+                if (isCatMatch && isStatusMatch) {
+                card.style.display = '';
+                visibleInThisCat++;
+                } else {
+                card.style.display = 'none';
+                }
+            });
+
+            // Hide category title and grid if there are no visible cards inside it
+            if (header) {
+                header.style.display = (isCatMatch && visibleInThisCat > 0) ? '' : 'none';
+            }
+            grid.style.display = (isCatMatch && visibleInThisCat > 0) ? '' : 'none';
+            });
+        }
+
+        // Handle Category tab clicks
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+            categoryBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            activeCategory = btn.dataset.category;
+            applyFilters();
+            });
+        });
+
+        // Handle Status tab clicks
+        statusBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+            statusBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            activeStatus = btn.dataset.status;
+            applyFilters();
+            });
+        });
+
+            // ================= INTERACTIVE VIDEO SCRUBBER (SMOOTHED) =================
+            const scrubVideo = document.getElementById('ak-scrub-video');
+            const scrubber = document.getElementById('video-scrubber');
+            const percentageDisplay = document.getElementById('slider-percentage-display');
+
+            if (scrubVideo && scrubber) {
+                let isSeeking = false;
+                let targetTime = 0;
+
+                // Keep video paused for scrubbing
+                scrubVideo.addEventListener('loadedmetadata', () => {
+                    scrubVideo.pause();
+                    scrubVideo.currentTime = 0;
+                });
+
+                // When the browser finishes decoding the current frame, jump to the next queued frame
+                scrubVideo.addEventListener('seeked', () => {
+                    isSeeking = false;
+                    if (Math.abs(scrubVideo.currentTime - targetTime) > 0.03) {
+                        scrubVideo.currentTime = targetTime;
+                    }
+                });
+
+                scrubber.addEventListener('input', (e) => {
+                    const progress = parseFloat(e.target.value);
+
+                    if (scrubVideo.duration) {
+                        targetTime = progress * scrubVideo.duration;
+
+                        // Only update currentTime if the browser isn't already busy seeking
+                        if (!isSeeking && !scrubVideo.seeking) {
+                            isSeeking = true;
+                            scrubVideo.currentTime = targetTime;
+                        }
+                    }
+
+                    if (percentageDisplay) {
+                        percentageDisplay.textContent = `Exploded: ${Math.round(progress * 100)}%`;
+                    }
+                });
+            }
+        </script>
+        </body>
 </html>

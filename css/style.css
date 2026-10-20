@@ -179,6 +179,91 @@ video {
     border: 2px solid #7c3aed;
     box-shadow: 0 0 25px rgba(124, 58, 237, 0.3);
 }
+/* Interactive Video Scrubber Section */
+.interactive-video-container {
+    max-width: 950px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.video-slider-box {
+    width: 85%;
+    max-width: 780px;
+    margin: 15px auto 0;
+    padding: 15px 22px;
+    background: #12121e;
+    border: 1px solid #7c3aed;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #94a3b8;
+    margin-bottom: 12px;
+}
+
+#slider-percentage-display {
+    color: #c084fc;
+}
+
+/* Custom Purple Range Slider */
+#video-scrubber {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background: #1f1f33;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+#video-scrubber:hover {
+    background: #2a2a45;
+}
+
+/* Slider Thumb (Chrome / Edge / Safari) */
+#video-scrubber::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #c084fc;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 12px rgba(192, 132, 252, 0.8), 0 0 20px rgba(124, 58, 237, 0.5);
+    cursor: grab;
+    transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+#video-scrubber:active::-webkit-slider-thumb {
+    cursor: grabbing;
+    transform: scale(1.15);
+    background: #a855f7;
+}
+
+/* Slider Thumb (Firefox) */
+#video-scrubber::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #c084fc;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 12px rgba(192, 132, 252, 0.8), 0 0 20px rgba(124, 58, 237, 0.5);
+    cursor: grab;
+    transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+#video-scrubber:active::-moz-range-thumb {
+    cursor: grabbing;
+    transform: scale(1.15);
+    background: #a855f7;
+}
 
 /* Reference Showcase Images */
 .refrence-image-size {
@@ -296,6 +381,67 @@ video {
         0 0 10px rgba(230, 57, 150, 0.8),
         0 0 20px rgba(184, 51, 255, 0.6);
     transition: width 0.4s ease-in-out;
+}
+
+/* Filter Bar Container */
+.filter-controls-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 25px auto 40px;
+    max-width: 1100px;
+    padding: 16px;
+    background: #12121e;
+    border: 1px solid #7c3aed;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+/* Individual Filter Buttons */
+.filter-btn {
+    background: #0d0d17;
+    border: 1px solid #7c3aed;
+    color: #cbd5e1;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+    background: rgba(124, 58, 237, 0.25);
+    color: #ffffff;
+    border-color: #c084fc;
+}
+
+.filter-btn.active {
+    background: #7c3aed;
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(124, 58, 237, 0.7);
+    border-color: #c084fc;
+}
+
+/* Accent borders for Status Buttons */
+.filter-btn.status-ready.active {
+    background: #16a34a;
+    border-color: #4ade80;
+    box-shadow: 0 0 12px rgba(34, 197, 94, 0.6);
+}
+
+.filter-btn.status-wip.active {
+    background: #475569;
+    border-color: #94a3b8;
+    box-shadow: 0 0 10px rgba(148, 163, 184, 0.4);
 }
 
 /* Category Dividers */
